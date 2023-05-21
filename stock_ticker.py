@@ -7,13 +7,15 @@ import pandas as pd
 import dash_auth
 
 USER_NAME_PAIRS = [['username','password'], ['pepet16','1234']]
-
+mydataset = "https://raw.githubusercontent.com/josetoro20/stock_ticker_dash/main/NASDAQcompanylist.csv"
+nsdq = pd.read_csv(mydataset)
 app = dash.Dash()
+
 server = app.server
 auth = dash_auth.BasicAuth(app, USER_NAME_PAIRS)
 
 # reading in a company list
-nsdq = pd.read_csv(r"C:\Users\pepet\PycharmProjly-Dashboards-with-Dash-master\Data\NASDAQc.csv")
+#nsdq = pd.read_csv(r"C:\Users\pepet\PycharmProjly-Dashboards-with-Dash-master\Data\NASDAQc.csv")
 nsdq.set_index('Symbol',inplace=True) # company sysmbols now set as index, inplace = true appends the df
 
 options = [] #empty options list for loop to append to
