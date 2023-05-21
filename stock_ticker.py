@@ -9,6 +9,7 @@ import dash_auth
 USER_NAME_PAIRS = [['username','password'], ['pepet16','1234']]
 
 app = dash.Dash()
+server = app.server
 auth = dash_auth.BasicAuth(app, USER_NAME_PAIRS)
 
 # reading in a company list
