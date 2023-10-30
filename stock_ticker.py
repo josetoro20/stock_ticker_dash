@@ -15,7 +15,7 @@ server = app.server
 auth = dash_auth.BasicAuth(app, USER_NAME_PAIRS)
 
 # reading in a company list
-#nsdq = pd.read_csv(r"C:\Users\pepet\PycharmProjly-Dashboards-with-Dash-master\Data\NASDAQc.csv")
+
 nsdq.set_index('Symbol',inplace=True) # company sysmbols now set as index, inplace = true appends the df
 
 options = [] #empty options list for loop to append to
